@@ -35,7 +35,7 @@ class PetsController < ApplicationController
   end
 
   patch '/pets/:id' do
-    binding.pry
+
     ####### bug fix
     if !params[:pet].keys.include?("owner_id")
     params[:owner]["owner_id"] = []
@@ -43,6 +43,7 @@ class PetsController < ApplicationController
     #######
     @pet = Owner.find(params[:id])
     @pet.update(params["owner"])
+    binding.pry
     binding.pry
     if !params["owner"]["name"].empty?
       @pet.owner << Owner.create(name: params["pet"]["name"])
