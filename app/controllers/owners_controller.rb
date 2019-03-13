@@ -15,7 +15,10 @@ class OwnersController < ApplicationController
     if !params["pet"]["name"].empty?
       @owner.pets << Pet.create(name: params["pet"]["name"])
     end
+<<<<<<< HEAD
     # binding.pry
+=======
+>>>>>>> a9aa818650672ffc11fd5223e8e9c9185328ba42
     redirect "owners/#{@owner.id}"
   end
 
@@ -31,6 +34,7 @@ class OwnersController < ApplicationController
   end
 
   patch '/owners/:id' do
+<<<<<<< HEAD
     if !params[:owner].keys.include?("pet_ids")
     params[:owner]["pet_ids"] = []
     end
@@ -41,5 +45,8 @@ class OwnersController < ApplicationController
      @owner.pets << Pet.create(name: params["pet"]["name"])
    end
    redirect "owners/#{@owner.id}"
+=======
+    binding.pry
+>>>>>>> a9aa818650672ffc11fd5223e8e9c9185328ba42
   end
 end
