@@ -43,7 +43,7 @@ class PetsController < ApplicationController
     #######
 
     @pet = Pet.find(params[:id])
-    binding.pry
+    # binding.pry
 
     @pet.update(params["pet"])
 
