@@ -2,7 +2,9 @@
 <form action="/pets/<%=@pet.id%>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <label>Name: <%= @pet.name %> </label>
-  <input type="text" id="pet_name" name="pet[name]">
+  <label> Update Name:
+    <input type="text" id="pet_name" name="pet[name]">
+  </label>
   <br>
   <label> Owners: </label>
   <%@owners.each do |owner|%>
