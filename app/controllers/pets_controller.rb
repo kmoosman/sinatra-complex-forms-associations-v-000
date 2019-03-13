@@ -30,11 +30,12 @@ class PetsController < ApplicationController
 
   get '/pets/:id' do
     @pet = Pet.find(params[:id])
-    binding.pry
+    # binding.pry
     erb :'/pets/show'
   end
 
   patch '/pets/:id' do
+    binding.pry
     ####### bug fix
     if !params[:pet].keys.include?("owner_id")
     params[:owner]["owner_id"] = []
